@@ -32,17 +32,28 @@ def main():
 
 def get_factorial():
     
-    factorial = input("Enter a positive, whole number: ")
+    factorial = int(input("Enter a positive, whole number: "))
     
-    if factorial == str:
-        console.print("Factorial must be a whole, positive number", style="bold red")
-    # factorial needs to be a positive number
-    elif factorial == int<0:
-        console.print("Factorial must be a whole, positive number", style="bold red")
-    # factorial needs to be a whole number
-    elif factorial == float:
-        console.print("Factorial must be a whole, positive number", style="bold red")
-    # factorial cannot be a string
+
+    # set the accumulator to 1
+    accumulator = 1
+        
+    # iterate from 1 to the target number
+    for i in range(1, factorial + 1):
+        accumulator *= i
+            
+    console.print(f"The factorial of {factorial} is {accumulator}.")
+    play_again()
+    
+def play_again(): 
+    # ask user if they want to continue
+    response = input("Would you like to continue? (y/n): ")
+       
+    if response.lower() == "y":
+        get_factorial()
+    else:
+        console.print("Goodbye!")
+        exit()
 
 
         
